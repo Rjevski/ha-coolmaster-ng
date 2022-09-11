@@ -3,7 +3,7 @@
 DATA_INFO = "info"
 DATA_COORDINATOR = "coordinator"
 
-DOMAIN = "coolmaster"
+DOMAIN = "coolmaster_ng"
 
 CONF_SERIAL_URL = "serial_url"
 CONF_SERIAL_BAUD = "device_baudrate"
