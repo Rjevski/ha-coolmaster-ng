@@ -1,0 +1,43 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: check-executables-have-shebangs  # make sure Shell scripts start with #!/bin/(z|ba|etc)sh
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-xml
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-builtin-literals
+      - id: check-docstring-first
+      - id: debug-statements
+      - id: detect-private-key  # better safe than sorry
+      - id: end-of-file-fixer
+      - id: fix-encoding-pragma  # those are not needed for Python 3 anymore
+        args: [--remove]
+      - id: mixed-line-ending  # enforce UNIX-style file endings to avoid surprises
+        args: [--fix=lf]
+      - id: trailing-whitespace
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+        types: [file, python]
+  - repo: https://github.com/psf/black
+    rev: 22.6.0 # Replace by any tag/version: https://github.com/psf/black/tags
+    hooks:
+      - id: black
+        language_version: python3 # Should be a command that runs python3.6+
+        types: [file, python]
+# TODO: disabled, make it play nice with Black first
+#  - repo: https://github.com/PyCQA/flake8
+#    rev: 5.0.4  # pick a git hash / tag to point to (https://gitlab.com/pycqa/flake8/-/tags)
+#    hooks:
+#      - id: flake8
+#        types: [file, python]

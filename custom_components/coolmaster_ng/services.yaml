@@ -1,0 +1,19 @@
+set_ambient_temperature:
+  name: Set ambient temperature
+  description: Notify the unit of the current ambient temperature
+  target:
+    entity:
+      integration: coolmaster
+      domain: climate
+  fields:
+    temperature:
+      name: Ambient temperature
+      description: Ambient temperature, in the unit of the climate device
+      required: true
+      example: 21.5
+      selector:
+        number:
+          min: 0
+          max: 100
+          step: 0.1
+          unit_of_measurement: "°"

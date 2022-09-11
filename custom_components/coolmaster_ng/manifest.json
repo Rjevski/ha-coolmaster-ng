@@ -1,0 +1,12 @@
+{
+  "domain": "coolmaster_ng",
+  "name": "CoolMasterNet NG",
+  "config_flow": true,
+  "version": "0.1",
+  "documentation": "https://github.com/Rjevski/ha-coolmaster-ng",
+  "issue_tracker": "https://github.com/Rjevski/ha-coolmaster-ng/issues",
+  "requirements": ["pycoolmasternet-ng==0.3.2"],
+  "codeowners": ["@Rjevski"],
+  "iot_class": "local_polling",
+  "loggers": ["pycoolmasternet_ng"]
+}
