@@ -6,7 +6,7 @@ Compared to the built-in integration, this one adds a few extra features:
 
 * other transports - in addition to telnet, serial is now supported and the code is structured in such a way that other transports can be added down the line (REST and maybe even CoolAutomation's official cloud)
 
-* reporting of AC heating/cooling demand if supported (faked if not - this can be removed or set behind a flag)
+* reporting of AC heating/cooling demand if supported (otherwise faked locally based on temperature differences)
 
 * AC unit capability (heat, cool, dry, etc) as well as display name is now configured at the CoolMasterNet gateway level using `props` commands - this means that the configuration persists with the gateway and is independent of HA. I also believe that's how CoolAutomation's cloud-based app does it, so it would make switching to Home Assistant easier for users of the official app (and in fact they would be able to coexist)
 
